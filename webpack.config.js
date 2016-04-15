@@ -49,7 +49,10 @@ module.exports = function makeWebpackConfig () {
 
     // Filename for entry points
     // Only adds hash in build mode
-    filename: isProd ? '[name].[hash].js' : '[name].bundle.js',
+    //filename: isProd ? '[name].[hash].js' : '[name].bundle.js',
+
+    // lets just specify
+    filename: 'bundle.js',
 
     // Filename for non-entry points
     // Only adds hash in build mode
@@ -157,10 +160,10 @@ module.exports = function makeWebpackConfig () {
     // Reference: https://github.com/ampedandwired/html-webpack-plugin
     // Render index.html
     config.plugins.push(
-      new HtmlWebpackPlugin({
-        template: './src/public/index.html',
-        inject: 'body'
-      }),
+      //new HtmlWebpackPlugin({
+      //  template: './src/public/index.html',
+      //  inject: 'body'
+      //}),
 
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Extract css files
