@@ -1,44 +1,43 @@
+// Refer to boilerplate project:
+// https://github.com/preboot/angular-webpack
+
 // library dependencies
 import angular from 'angular';
-import newRouter from '@angular/router';
 import ngRoute from 'angular-route';
 import ngMaterial from 'angular-material';
 import ngMdIcons from 'angular-material-icons';
 
+// TODO: Move to sass
 // library styles
 import 'angular-material/angular-material.css';
 
+// TODO: Move to sass
 // app styles
 import '../style/app.css';
 
 // app dependencies
 import routes from './routes';
+import navbar from './component/navbar';
 import view1 from './component/view1';
 
-let appDirective = () => {
-  return {
-    template: require('./app.html'),
-    controller: 'AppCtrl',
-    controllerAs: 'app'
-  }
-};
-
-let testComponent = {
-  template: '<p>Hello from component!</p>',
+// main app structure
+let appComponent = {
+  template: require('./app.html'),
   controller: 'AppCtrl',
-  controllerAs: 'test'
+  controllerAs: 'app'
 };
 
+// top level controller
 class AppCtrl {
   constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
+    this.randomVar = 'Hello there...';
   }
 }
 
-const app = angular.module('app', ['ngRoute', 'ngMaterial', 'ngMdIcons', 'view1'])
-  .directive('appMain', appDirective)
-  .component('testComponent', testComponent)
+// main app module
+const app = angular.module('app', ['ngRoute', 'ngMaterial', 'ngMdIcons', 'navbar', 'view1'])
   .controller('AppCtrl', AppCtrl)
+  .component('appMain', appComponent)
 
 // traditional routes
 routes(app);

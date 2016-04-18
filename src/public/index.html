@@ -10,32 +10,12 @@
       display: none;
     }
   </style>
-  <script src="/bundle.js"></script>
   <base href="/">
 </head>
 <body ng-cloak>
 
-  <div layout="column" layout-fill>
-
-    <md-toolbar md-scroll-shrink="true">
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings">
-          <ng-md-icon icon="menu"></ng-md-icon>
-        </md-button>
-        <span>Angular Webpack Boom</span>
-        <span flex></span>
-        <md-button>Right</md-button>
-      </div>
-    </md-toolbar>
-
-    <md-content>
-      <div layout="column" flex tabIndex="-1" role="main">
-        <app-main></app-main>
-        <main-app-component></main-app-component>
-      </div>
-    </md-content>
-
-  </div>
+  <!-- main layout into app component -->
+  <app-main></app-main>
 
 </body>
 </html>

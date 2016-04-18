@@ -1,31 +1,7 @@
+<div layout="column" layout-fill>
 
-<md-content class="md-padding" layout-xs="column" layout="row">
+  <navbar></navbar>
 
-  <!--
-  <md-card>
-    <img src="/img/logo.png" class="md-card-image">
-  </md-card>
-  -->
+  <ng-view></ng-view>
 
-  <md-card>
-    <md-card-title>
-      <md-card-title-text>
-        <span class="md-headline">Hello from Angular!</span>
-        <span class="md-subhead">Card subheader</span>
-      </md-card-title-text>
-    </md-card-title>
-    <md-card-content>
-      <a href="#/">Home</a>
-      <a href="#/view1">View 1</a>
-
-      <!-- instead of ng-view, lets try out component routing -->
-      <ng-view></ng-view>
-
-    </md-card-content>
-  </md-card>
-
-</md-content>
-
-<md-content class="md-padding" layout="row">
-  <a ng-href="{{app.url}}">Webpack Angular Starter</a>
-</md-content>
+</div>

@@ -1,2 +1,10 @@
 /* styles in src/style directory are applied to the whole page */
 
+/* TODO: Need to do this with variables and sass */
+body {
+    background: #ddd;
+}
+
+body md-content {
+    background: #ddd;
+}
