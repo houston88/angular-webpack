@@ -38,8 +38,8 @@ class AppCtrl {
 const app = angular.module('app', ['ngRoute', 'ngMaterial', 'ngMdIcons', 'navbar', 'view1'])
   .config(($mdThemingProvider) => {
     $mdThemingProvider.theme('default')
-      .primaryPalette('grey')
-      .accentPalette('blue')
+      .primaryPalette('blue')
+      .accentPalette('green')
   })
   .controller('AppCtrl', AppCtrl)
   .component('appMain', appComponent)

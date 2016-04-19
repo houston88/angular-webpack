@@ -8,13 +8,25 @@ class NavbarController {
 // navbar component
 let navbarComponent = {
   template: `
-  <md-toolbar md-scroll-shrink="true">
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings">
-          <ng-md-icon icon="menu"></ng-md-icon>
-        </md-button>
-        <span>Alpha Saver</span>
-        <span flex></span>
+  <md-toolbar md-whiteframe="3"/>
+    <div class="md-toolbar-tools">
+
+      <md-button class="md-icon-button" aria-label="Settings">
+        <ng-md-icon icon="menu"></ng-md-icon>
+      </md-button>
+      <span>Alpha Saver</span>
+
+      <span flex></span>
+
+      <md-button class="md-icon-button" aria-label="Search">
+        <ng-md-icon icon="search"></ng-md-icon>
+      </md-button>
+      <md-input-container md-no-float class="md-block md-accent" style="padding-top:20px;padding-bottom:0px;">
+        <input ng-model="navbar.search" placeholder="Search here">
+      </md-input-container>
+
+      <!-- TODO: Play with FAB toolbar -->
+
       <md-button>Button</md-button>
     </div>
 
