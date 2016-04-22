@@ -1,44 +1,41 @@
-// View 1
+// navbar
 class NavbarController {
-  constructor() {
+  constructor($scope) {
     console.log('Navbar controller...');
+    this.scope = $scope;
   }
+  toggleLeftNav() {
+    // can we event up
+    console.log('Emit event up chain...');
+    this.scope.$emit('toggleNav');
+  };
 }
 
 // navbar component
 let navbarComponent = {
-  template: `
-  <md-toolbar md-whiteframe="3"/>
-    <div class="md-toolbar-tools">
+  template:
+    `<md-toolbar md-whiteframe="3" class="md-primary md-hue-1">
+      <div class="md-toolbar-tools">
 
-      <md-button class="md-icon-button" aria-label="Settings">
-        <ng-md-icon icon="menu"></ng-md-icon>
-      </md-button>
-      <span>Alpha Saver</span>
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="navbar.toggleLeftNav()">
+          <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        <span>Alpha Saver</span>
 
-      <span flex></span>
+        <span flex></span>
 
-      <md-button class="md-icon-button" aria-label="Search">
-        <ng-md-icon icon="search"></ng-md-icon>
-      </md-button>
-      <md-input-container md-no-float class="md-block md-accent" style="padding-top:20px;padding-bottom:0px;">
-        <input ng-model="navbar.search" placeholder="Search here">
-      </md-input-container>
+        <md-input-container md-no-float flex-15 class="md-block md-accent"  style="margin:0;padding-top:20px;padding-bottom:0px;">
+          <input ng-model="main.search" placeholder="Search">
+        </md-input-container>
+        <md-button class="md-fab md-mini md-accent" aria-label="Search">
+          <ng-md-icon icon="search"></ng-md-icon>
+        </md-button>
 
-      <!-- TODO: Play with FAB toolbar -->
-
-      <md-button>Button</md-button>
-    </div>
-
-    <!-- can we place in toolbar? -->
-    <md-tabs md-stretch-tabs md-selected="selectedIndex">
-      <md-tab label="Your Price Watches"></md-tab>
-      <md-tab label="Browse Products"></md-tab>
-    </md-tabs>
-
-  </md-toolbar>`,
+        <!--<md-button>Button</md-button>-->
+      </div>
+    </md-toolbar>`,
   controller: 'NavbarController',
-  controllerAs: 'navbarCtrl'
+  controllerAs: 'navbar'
 };
 
 let navbar = angular.module('navbar', ['ngMdIcons'])

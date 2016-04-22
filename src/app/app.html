@@ -2,6 +2,28 @@
 
   <navbar></navbar>
 
+  <!-- left menu: Move to component -->
+  <!-- consider: md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop -->
+  <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-open="app.appSettings.leftNavOpen"
+              md-whiteframe="4">
+    <md-toolbar md-whiteframe="3" class="md-accent">
+      <div class="md-toolbar-tools">
+        <h1 class="md-toolbar-tools">Menu</h1>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="More" ng-click="app.toggleNav()">
+          <ng-md-icon icon="close"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content layout-padding>
+      <p>
+        Left menu options can go here...
+      </p>
+    </md-content>
+  </md-sidenav>
+
+  <!-- main content -->
+  <tabbar></tabbar>
   <ng-view></ng-view>
 
 </div>
