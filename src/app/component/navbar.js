@@ -3,16 +3,12 @@ import sidenav from './sidenav';
 // navbar
 class NavbarController {
   constructor($mdSidenav, $log) {
-    console.log('Navbar controller...');
-    this.isLeftNavOpen = false;
     this.mdSidenav = $mdSidenav;
     this.log = $log;
+    this.log.info('Navbar controller...');
   }
   toggleLeftNav() {
-    this.isLeftNavOpen = !this.isLeftNavOpen;
-  }
-  onClose() {
-    this.isLeftNavOpen = false;
+    this.mdSidenav('leftSideNav').toggle();
   }
   // on component init
   $onInit() {
@@ -43,9 +39,8 @@ let navbarComponent = {
         <!--<md-button>Button</md-button>-->
       </div>
     </md-toolbar>
-
     <!-- lets also include sidenav with navbar -->
-    <sidenav is-open="navbar.isLeftNavOpen" on-close="navbar.onClose()"></sidenav>`,
+    <sidenav></sidenav>`,
   controller: 'NavbarController',
   controllerAs: 'navbar'
 };

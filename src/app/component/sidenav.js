@@ -1,15 +1,16 @@
 // sidenav component
 class SidenavController {
-  constructor($log) {
+  constructor($mdSidenav, $log) {
+    this.mdSidenav = $mdSidenav;
     this.log = $log;
     this.log.info('Sidenav controller...');
-    this.isOpen = false;
   }
   // toggle sidenav
   toggleNav() {
-    this.isOpen = !this.isOpen;
-    // update parent component
-    this.onClose();
+    let self = this;
+    this.mdSidenav('leftSideNav').toggle().then(() => {
+      self.log.debug("toggle is done");
+    });
   }
   // on component init
   $onInit() {
@@ -27,11 +28,10 @@ class SidenavController {
 
 // navbar component
 // options for md-sidenav:
-// md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="true"
+// md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="true" md-is-open="sidenav.isOpen"
 let sidenavComponent = {
   template:
-    `<md-sidenav md-component-id="leftSideNav" class="md-sidenav-left" md-is-open="sidenav.isOpen"
-       md-whiteframe="4">
+    `<md-sidenav md-component-id="leftSideNav" class="md-sidenav-left" md-whiteframe="4">
       <md-toolbar md-whiteframe="3" class="md-accent">
         <div class="md-toolbar-tools">
           <h1 class="md-toolbar-tools">Menu</h1>
@@ -60,11 +60,7 @@ let sidenavComponent = {
       </md-content>
     </md-sidenav>`,
   controller: 'SidenavController',
-  controllerAs: 'sidenav',
-  bindings: {
-    isOpen: '<',
-    onClose: '&'
-  }
+  controllerAs: 'sidenav'
 };
 
 let sidenav = angular.module('sidenav', [])
