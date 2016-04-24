@@ -1,3 +1,6 @@
+// import view1 demo styles
+import '../../style/view1.scss'
+
 // View 1
 class ViewOneController {
   constructor() {
