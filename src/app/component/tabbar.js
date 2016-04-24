@@ -9,7 +9,7 @@ class TabbarController {
 let tabbarComponent = {
   template:
     `<md-content>
-      <md-tabs md-stretch-tabs md-selected="selectedIndex">
+      <md-tabs md-whiteframe="3" md-stretch-tabs md-selected="selectedIndex" class="md-primary md-hue-2">
         <md-tab label="Your Price Watches"></md-tab>
         <md-tab label="Browse Products"></md-tab>
       </md-tabs>

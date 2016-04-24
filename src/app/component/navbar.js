@@ -1,5 +1,8 @@
 import sidenav from './sidenav';
 
+// styles
+import '../../style/navbar.scss';
+
 // navbar
 class NavbarController {
   constructor($mdSidenav, $log) {
@@ -19,7 +22,7 @@ class NavbarController {
 // navbar component
 let navbarComponent = {
   template:
-    `<md-toolbar md-whiteframe="3" class="md-primary md-hue-1">
+    `<md-toolbar class="app-main md-primary md-hue-3" md-whiteframe="3">
       <div class="md-toolbar-tools">
 
         <md-button class="md-icon-button" aria-label="Settings" ng-click="navbar.toggleLeftNav()">

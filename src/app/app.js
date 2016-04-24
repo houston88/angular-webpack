@@ -7,14 +7,12 @@ import ngRoute from 'angular-route';
 import ngMaterial from 'angular-material';
 import ngMdIcons from 'angular-material-icons';
 
-// TODO: Move to sass
 // library styles
 import 'angular-material/angular-material.css';
 import 'angular-material-icons/angular-material-icons.css';
 
-// TODO: Move to sass
-// app styles
-import '../style/app.css';
+// main app styles
+import '../style/app.scss';
 
 // app dependencies
 import routes from './routes';
