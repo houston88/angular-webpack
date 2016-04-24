@@ -1,14 +1,23 @@
+import sidenav from './sidenav';
+
 // navbar
 class NavbarController {
-  constructor($scope) {
+  constructor($mdSidenav, $log) {
     console.log('Navbar controller...');
-    this.scope = $scope;
+    this.isLeftNavOpen = false;
+    this.mdSidenav = $mdSidenav;
+    this.log = $log;
   }
   toggleLeftNav() {
-    // can we event up
-    console.log('Emit event up chain...');
-    this.scope.$emit('toggleNav');
-  };
+    this.isLeftNavOpen = !this.isLeftNavOpen;
+  }
+  onClose() {
+    this.isLeftNavOpen = false;
+  }
+  // on component init
+  $onInit() {
+    this.log.debug('On navbar init...');
+  }
 }
 
 // navbar component
@@ -20,11 +29,11 @@ let navbarComponent = {
         <md-button class="md-icon-button" aria-label="Settings" ng-click="navbar.toggleLeftNav()">
           <ng-md-icon icon="menu"></ng-md-icon>
         </md-button>
-        <span>Alpha Saver</span>
+        <span>App Name</span>
 
         <span flex></span>
 
-        <md-input-container md-no-float flex-15 class="md-block md-accent"  style="margin:0;padding-top:20px;padding-bottom:0px;">
+        <md-input-container md-no-float flex-5 class="md-block md-accent"  style="margin:0;padding-top:25px;padding-bottom:0px;">
           <input ng-model="main.search" placeholder="Search">
         </md-input-container>
         <md-button class="md-fab md-mini md-accent" aria-label="Search">
@@ -33,12 +42,15 @@ let navbarComponent = {
 
         <!--<md-button>Button</md-button>-->
       </div>
-    </md-toolbar>`,
+    </md-toolbar>
+
+    <!-- lets also include sidenav with navbar -->
+    <sidenav is-open="navbar.isLeftNavOpen" on-close="navbar.onClose()"></sidenav>`,
   controller: 'NavbarController',
   controllerAs: 'navbar'
 };
 
-let navbar = angular.module('navbar', ['ngMdIcons'])
+let navbar = angular.module('navbar', ['sidenav'])
   .controller('NavbarController', NavbarController)
   .component('navbar', navbarComponent);
 

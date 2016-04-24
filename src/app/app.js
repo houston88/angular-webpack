@@ -32,31 +32,9 @@ let appComponent = {
 
 // top level controller
 class AppCtrl {
-  constructor($scope) {
+  constructor() {
     this.randomVar = 'Hello there...';
-    this.appSettings = {
-      leftNavOpen: false
-    };
-    this.scope = $scope;
-
-    // handle toggle event
-    $scope.$on('toggleNav',(event) => {
-      console.log('Got broadcast event...');
-      this.appSettings.leftNavOpen = !this.appSettings.leftNavOpen;
-    });
-
   }
-
-  /*
-  scope.$on('toggleNav', (event) => {
-    console.log('Got broadcast event...');
-    this.appSettings.leftNavOpen = !this.appSettings.leftNavOpen;
-  });
-  */
-
-  toggleNav() {
-    this.appSettings.leftNavOpen = !this.appSettings.leftNavOpen;
-  };
 }
 
 // main app module
