@@ -18,6 +18,7 @@ class NavbarController {
     this.log.debug('On navbar init...');
   }
 }
+NavbarController.$inject = ['$mdSidenav','$log'];
 
 // navbar component
 let navbarComponent = {

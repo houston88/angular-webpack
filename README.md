@@ -68,6 +68,13 @@ npm start
 
 It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:8080`.
 
+For a prod build:
+```bash
+npm run build
+```
+
+You will need a mechanism to serve out the content.
+
 ## Developing
 
 ### Build files

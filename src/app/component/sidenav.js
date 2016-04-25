@@ -25,6 +25,7 @@ class SidenavController {
     this.log.debug(changesObj);
   }
 }
+SidenavController.$inject = ['$mdSidenav','$log'];
 
 // navbar component
 // options for md-sidenav:

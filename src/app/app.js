@@ -37,11 +37,11 @@ class AppCtrl {
 
 // main app module
 const app = angular.module('app', ['ngRoute', 'ngMaterial', 'ngMdIcons', 'navbar', 'tabbar', 'search', 'view1'])
-  .config(($mdThemingProvider) => {
+  .config(['$mdThemingProvider', ($mdThemingProvider) => {
     $mdThemingProvider.theme('default')
       .primaryPalette('grey')
       .accentPalette('blue')
-  })
+  }])
   .controller('AppCtrl', AppCtrl)
   .component('appMain', appComponent);
 
