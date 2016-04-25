@@ -1,20 +1,20 @@
-import app from './app';
+import home from './home';
 
-describe('app', () => {
+describe('home', () => {
 
-  describe('AppCtrl', () => {
+  describe('HomeCtrl', () => {
     let ctrl;
 
     beforeEach(() => {
       angular.mock.module(app);
 
       angular.mock.inject(($controller) => {
-        ctrl = $controller('AppCtrl', {});
+        ctrl = $controller('HomeCtrl', {});
       });
     });
 
     it('should contain the starter url', () => {
-      expect(ctrl.url).toBe('https://github.com/preboot/angular-webpack');
+      expect(ctrl.randomVar).toBe('Hello there...');
     });
   });
 });
