@@ -11,7 +11,7 @@ import 'angular-material-icons/angular-material-icons.css';
 // main app styles
 import '../style/app.scss';
 
-// app dependencies
+// routing
 import routes from './routes';
 
 // main app layout

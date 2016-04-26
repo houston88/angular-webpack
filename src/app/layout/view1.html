@@ -1,76 +1,86 @@
-<md-card>
-    <md-card-title>
-        <md-card-title-text>
-            <span class="md-headline">Angular Material with Webpack</span>
-            <span class="md-subhead">Card subheader</span>
-        </md-card-title-text>
-    </md-card-title>
-    <md-card-content>
-        <p>View 1 Component</p>
-        <p>
-            <ng-md-icon icon="amazon" size="36"></ng-md-icon>
-        </p>
-        <a ng-href="{{view1Ctrl.url}}">Super Duper</a>
-    </md-card-content>
-</md-card>
+<md-content layout="column" layout-gt-sm="row">
 
-<md-content flex layout-padding>
+    <div flex-50>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Angular Material with Webpack</span>
+                <span class="md-subhead">Card subheader</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <p>View 1 Component</p>
+            <p>
+                <ng-md-icon icon="amazon" size="36"></ng-md-icon>
+            </p>
+            <a ng-href="{{view1Ctrl.url}}">Super Duper</a>
+        </md-card-content>
+    </md-card>
+    </div>
+
+    <md-content layout-padding flex>
+        <p>
+            Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque
+            nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro
+            labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans
+            no. Sed laudem aliquam ne.</p>
+        <p>
+            Facete delenit argumentum cum at. Pro rebum nostrum contentiones ad. Mel exerci tritani maiorum at, mea te
+            audire phaedrum, mel et nibh aliquam. Malis causae equidem vel eu. Noster melius vis ea, duis alterum
+            oporteat ea sea. Per cu vide munere fierent.
+        </p>
+    </md-content>
+
+</md-content>
+
+
+<md-content flex layout-padding layout="column">
     <!--
     <div layout="row" layout-sm="column" layout-align="space-around">
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
     -->
-    <p>
-        Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque
-        nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro
-        labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans
-        no. Sed laudem aliquam ne.</p>
-    <p>
-        Facete delenit argumentum cum at. Pro rebum nostrum contentiones ad. Mel exerci tritani maiorum at, mea te
-        audire phaedrum, mel et nibh aliquam. Malis causae equidem vel eu. Noster melius vis ea, duis alterum
-        oporteat ea sea. Per cu vide munere fierent.
-    </p>
-</md-content>
 
-<!-- grid list demo -->
-<div class="gridListdemoBasicUsage">
-    <md-grid-list
-            md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
-            md-row-height-gt-md="1:1" md-row-height="2:2"
-            md-gutter="12px" md-gutter-gt-sm="8px" >
-        <md-grid-tile class="gray"
-                      md-rowspan="3" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
-            <md-grid-tile-footer>
-                <h3>#1: (3r x 2c)</h3>
-            </md-grid-tile-footer>
-        </md-grid-tile>
-        <md-grid-tile class="green">
-            <md-grid-tile-footer>
-                <h3>#2: (1r x 1c)</h3>
-            </md-grid-tile-footer>
-        </md-grid-tile>
-        <md-grid-tile class="yellow">
-            <md-grid-tile-footer>
-                <h3>#3: (1r x 1c)</h3>
-            </md-grid-tile-footer>
-        </md-grid-tile>
-        <md-grid-tile class="blue"
-                      md-rowspan="2">
-            <md-grid-tile-footer>
-                <h3>#4: (2r x 1c)</h3>
-            </md-grid-tile-footer>
-        </md-grid-tile>
-        <md-grid-tile class="red"
-                      md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
-            <md-grid-tile-footer>
-                <h3>#5: (2r x 2c)</h3>
-            </md-grid-tile-footer>
-        </md-grid-tile>
-        <md-grid-tile class="green"
-                      md-rowspan="2" >
-            <md-grid-tile-footer>
-                <h3>#6: (2r x 1c)</h3>
-            </md-grid-tile-footer>
-        </md-grid-tile>
-    </md-grid-list>
-</div>
+
+    <div class="gridListdemoBasicUsage">
+        <md-grid-list
+                md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+                md-row-height-gt-md="1:1" md-row-height="2:2"
+                md-gutter="12px" md-gutter-gt-sm="8px" >
+            <md-grid-tile class="gray"
+                          md-rowspan="3" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                <md-grid-tile-footer>
+                    <h3>#1: (3r x 2c)</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="green">
+                <md-grid-tile-footer>
+                    <h3>#2: (1r x 1c)</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="yellow">
+                <md-grid-tile-footer>
+                    <h3>#3: (1r x 1c)</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="blue"
+                          md-rowspan="2">
+                <md-grid-tile-footer>
+                    <h3>#4: (2r x 1c)</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="red"
+                          md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                <md-grid-tile-footer>
+                    <h3>#5: (2r x 2c)</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="green"
+                          md-rowspan="2" >
+                <md-grid-tile-footer>
+                    <h3>#6: (2r x 1c)</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+</md-content>

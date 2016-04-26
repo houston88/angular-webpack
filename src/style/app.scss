@@ -4,7 +4,8 @@
 
 body {
     background: $body-background;
-    md-content {
+    md-content.main-view {
         background: $body-background;
+        margin-top: 64px + 48px;
     }
 }

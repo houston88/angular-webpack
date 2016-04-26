@@ -18,5 +18,13 @@ export default function routes($stateProvider, $urlRouterProvider, $locationProv
           template: '<view1-component></view1-component>'
         }
       }
+    })
+    .state('home.view2', {
+      url: '/view2',
+      views: {
+        'content@home': {
+          template: '<view2-component></view2-component>'
+        }
+      }
     });
 }

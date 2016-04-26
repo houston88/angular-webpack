@@ -1,7 +1,9 @@
+// component imports
 import navbar from '../component/navbar';
 import tabbar from '../component/tabbar';
 import search from '../component/search';
 import view1  from './view1';
+import view2  from './view2';
 
 // top level controller
 class HomeCtrl {
@@ -16,9 +18,10 @@ let homeComponent = {
     `<div layout="column" layout-fill>
       <!-- contains leftnav -->
       <navbar></navbar>
-      <!-- main content -->
+      <!-- tab bar -->
       <tabbar ng-cloak></tabbar>
-      <md-content class="md-padding" layout="column">
+      <!-- main content -->
+      <md-content layout-padding class="main-view" layout="column">
         <div ui-view="content"></div>
       </md-content>
     </div>`,
@@ -26,7 +29,7 @@ let homeComponent = {
   controllerAs: 'home'
 };
 
-angular.module('home', ['navbar', 'tabbar', 'search', 'view1'])
+angular.module('home', ['navbar', 'tabbar', 'search', 'view1', 'view2'])
   .controller('HomeCtrl', HomeCtrl)
   .component('home', homeComponent);
 
